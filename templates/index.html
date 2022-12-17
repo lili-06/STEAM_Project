@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<!--  -->
+<html lang="pl">
+  <!-- początek head -->
+  <head>
+    <!-- znaczniki meta -->
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="To jest strona o mnie." />
+
+    <title>Strona Główna</title>
+
+    <!-- skrypt do logo -->
+    <script
+      src="https://kit.fontawesome.com/faa708e086.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- fonty od googla -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Catamaran:wght@100;400;600;800&family=Roboto:wght@700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- linki do plików css -->
+    <link rel="stylesheet" href="./static/styles/normalize.css" />
+    <link rel="stylesheet" href="./static/styles/main.css" />
+  </head>
+  <!-- koniec head -->
+
+  <!-- początek body -->
+  <body>
+    <!-- Header -->
+    <header class="hero">
+      <!-- container -->
+      <div class="container">
+        <!-- hero top - logo i nawigacja -->
+        <div class="overlay">
+          <div class="hero-top">
+            <!-- logo -->
+            <div class="logo">
+              <i class="fa-solid fa-code"></i>
+            </div>
+            <!-- nawigacja -->
+            <nav class="nav">
+              <div class="mobile-menu-icon" id="mobile-menu-icon">
+                <i class="fas fa-bars fa-2x"></i>
+              </div>
+              <ul class="nav-links opened">
+                <li><a class="nav-link" href="#about">O mnie</a></li>
+                <li>
+                  <a class="nav-link" href="#interests">Zainteresowania</a>
+                </li>
+                <li><a class="nav-link" href="#photos">Zdjęcia</a></li>
+                <li><a class="nav-link" href="#contact">Kontakt</a></li>
+                {% if user.is_authenticated %}
+                <li><a class="nav-link" href="/logout">Wyloguj</a></li>
+                {% else %}
+                <li><a class="nav-link" href="/login">Zaloguj się</a></li>
+                {% endif %}
+                
+              </ul>
+            </nav>
+          </div>
+          <!-- koniec hero top -->
+          <!-- hero down - o mnie -->
+          <div class="hero-bottom">
+            <h1>Cześć!</h1>
+            <p>
+              Mam na imię Lidia. Uwielbiam grać na pianinie, słuchać muzyki,
+              programować i czytać książki. Kocham filmy Marvela!
+            </p>
+            <div class="meet-me">
+              <a href="#about">POZNAJMY SIĘ</a>
+            </div>
+          </div>
+          <!-- koniec hero down -->
+        </div>
+      </div>
+      <!-- koniec container -->
+    </header>
+    <!-- Koniec headera -->
+    <!-- Main -->
+    <main>
+      <!-- 1 sekcja - about -->
+      <section class="about light section" id="about">
+        <!-- container -->
+        <div class="container about-wrapper">
+          <!-- zdj - left -->
+          <div class="about-left">
+            <img
+              src="./static/images/hero-background2.jpg"
+              alt="Reaktor łukowy Iron Mana"
+            />
+          </div>
+          <!-- tekt - right -->
+          <div class="about-right">
+            <h2>O mnie</h2>
+            <p class="first-text"><strong>Jestem Lidia</strong></p>
+            <p>
+              Macaroon carrot cake lollipop chupa chups lemon drops candy canes
+              sesame snaps. Caramels chocolate cake gummies jujubes muffin donut
+              I love.
+            </p>
+            <p>
+              Candy canes marzipan cookie tiramisu bonbon candy canes jujubes
+              bear claw. Gummies biscuit pie soufflé I love. Toffee caramels
+              sesame snaps I love lollipop tart bonbon topping.
+            </p>
+            <p>
+              Liquorice jujubes cotton candy cake ice cream shortbread. Cotton
+              candy donut soufflé sesame snaps tootsie roll sesame snaps.
+            </p>
+            <p>
+              Chocolate lollipop croissant soufflé marshmallow soufflé chupa
+              chups tootsie roll wafer.
+            </p>
+          </div>
+          <!-- koniec right -->
+        </div>
+        <!-- koniec container -->
+      </section>
+      <!-- koniec sekcji 1 -->
+      <!-- sekcja 2 -->
+      <section class="interests brown section" id="interests">
+        <!-- container -->
+        <div class="container">
+          <ul class="interests-wrapper">
+            <li>
+              <i class="fa-solid fa-music fa-3x"></i>
+              <h3>Muzyka</h3>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Corrupti libero nam assumenda consequuntur porro, in accusamus
+                voluptatibus ea laudantium
+              </p>
+            </li>
+            <li>
+              <i class="fa-solid fa-book-open fa-3x"></i>
+              <h3>Książki</h3>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Corrupti libero nam assumenda consequuntur porro, in accusamus
+                voluptatibus ea laudantium
+              </p>
+            </li>
+            <li>
+              <i class="fa-solid fa-laptop-code fa-3x"></i>
+              <h3>Programowanie</h3>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Corrupti libero nam assumenda consequuntur porro, in accusamus
+                voluptatibus ea laudantium
+              </p>
+            </li>
+            <li>
+              <i class="fa-solid fa-clapperboard fa-3x"></i>
+              <h3>Marvel</h3>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Corrupti libero nam assumenda consequuntur porro, in accusamus
+                voluptatibus ea laudantium
+              </p>
+            </li>
+          </ul>
+        </div>
+        <!-- koniec container -->
+      </section>
+      <!-- koniec skecja 2 -->
+      <!-- skecja 3 -->
+      <section class="photos light section" id="photos">
+        <!-- container -->
+        <div class="container">
+          <h2>Zdjęcia</h2>
+          <p>
+            Oto galeria zdjęć, które przedstawiają moje pasje. Cupcake ipsum
+            dolor sit amet. Jelly beans caramels jelly muffin cake. Caramels
+            tiramisu soufflé I love sugar plum.
+          </p>
+          <!-- zdjęcia -->
+          <div class="photos-wrapper">
+            <figure>
+              <img src="./static/images/zdj1.jpg" alt="" />
+              <figcaption>
+                Zdjęcie autorstwa <strong>Dariusza Sankowskiego</strong> z
+                <strong>Pixabay</strong>
+              </figcaption>
+            </figure>
+            <figure>
+              <img src="./static/images/zdj2.jpg" alt="" />
+              <figcaption>
+                Zdjęcie autorstwa <strong>Road Trip with Raj</strong> z
+                <strong>Unsplash</strong>
+              </figcaption>
+            </figure>
+            <figure>
+              <img src="./static/images/zdj3.jpg" alt="" />
+              <figcaption>
+                Zdjęcie autorstwa <strong>Pixabay</strong> z
+                <strong>Pexels</strong>
+              </figcaption>
+            </figure>
+            <figure>
+              <img src="./static/images/zdj4.jpg" alt="" />
+              <figcaption>
+                Zdjęcie autorstwa <strong>Solihin Kentjana</strong> z
+                <stong>Pixabay</stong>
+              </figcaption>
+            </figure>
+            <figure>
+              <img src="./static/images/zdj5.jpg" alt="" />
+              <figcaption>
+                Zdjęcie autorstwa <strong>Pixabay</strong> z
+                <strong>Pexels</strong>
+              </figcaption>
+            </figure>
+            <figure>
+              <img src="./static/images/zdj7.jpg" alt="" />
+              <figcaption>
+                Zdjęcie autorstwa <strong>Kibeom Kim</strong> z
+                <strong>Pixabay</strong>
+              </figcaption>
+            </figure>
+          </div>
+          <!-- koniec zdj -->
+        </div>
+        <!-- koniec container -->
+      </section>
+      <!-- koniec skecji 3 -->
+      <!-- sekcja 4 -->
+      <section class="quote uniqe section">
+        <!-- container -->
+        <div class="container">
+          <blockquote>
+            <!-- ikona -->
+            <i class="fas fa-quote-left fa-5x fa-pull-left"></i>
+            <!--  -->
+
+            <p class="quote-text">
+              Just because something works, doesn't mean it can't be improved.
+            </p>
+            <p class="quote-author">Shuri, <em>Black Panther</em></p>
+          </blockquote>
+        </div>
+        <!-- koniec container -->
+      </section>
+      <!-- koniec sekcji 4 -->
+      <!-- sekcja 5 -->
+      <section class="contact light section" id="contact">
+        <!-- container -->
+        <div class="container">
+          <h2>Napisz do mnie</h2>
+          <!-- formularz -->
+          <form>
+            <!--<input type="radio">
+            <input type="checkbox">
+            <input type="tel">
+            <input type="number" min="0" max="100">-->
+            <label for="name">Imię</label>
+            <input id="name" type="text" placeholder="Imię" required />
+            <label for="email">Email</label>
+            <input id="email" type="email" placeholder="Email" required />
+            <label for="message">Miejsce na twoją wiadomość</label>
+            <textarea id="message" type="text" required></textarea>
+            <!--przycisk który sprawdza czy są 
+            wypełnione pola z required w inputach-->
+            <div class="button-wrapper">
+              <button type="submit">Wyślij</button>
+            </div>
+          </form>
+          <!-- koniec formularza -->
+        </div>
+        <!-- koniec container -->
+      </section>
+      <!-- koniec sekcji 5 -->
+      <section id="projects">
+        {% include 'projects.html' %}
+      </section>
+      
+    </main>
+    <!-- koniec main -->
+    <!-- stopka -->
+    <footer class="brown section">
+      <!-- container -->
+      <div class="container footer">
+        <!-- prawa autorskie -->
+        <div class="formal">
+          <p class="copyright">&copy; Lidia Kaczmarek 2022</p>
+          <p>
+            Główne zdjęcie autorstwa <strong>DenisK_2017</strong> z
+            <strong>Pixabay</strong>
+          </p>
+          <p>
+            Zdjęcie about autorstwa <strong>Oziel Gómez</strong> z
+            <strong>Pexels</strong>
+          </p>
+        </div>
+        <!-- koniec praw autorskich -->
+        <!-- ikony mediów -->
+        <div class="icons">
+          <ul>
+            <li>
+              <a href="https://www.instagram.com/lidkaq06/" target="_blank"
+                ><i class="fab fa-instagram fa-2x"></i
+              ></a>
+            </li>
+            <li>
+              <a
+                href="https://www.facebook.com/lidia.kaczmarek.9210"
+                target="_blank"
+                ><i class="fab fa-facebook-square fa-2x"></i
+              ></a>
+            </li>
+            <li>
+              <a href="https://github.com/lili-06" target="_blank"
+                ><i class="fa-brands fa-github fa-2x"></i
+              ></a>
+            </li>
+          </ul>
+        </div>
+        <!-- koniec ikon -->
+      </div>
+      <!-- koniec container -->
+    </footer>
+    <!-- koniec stopki -->
+    <script src="./static/js/mobile-menu.js"></script>
+  </body>
+  <!-- koniec body -->
+</html>

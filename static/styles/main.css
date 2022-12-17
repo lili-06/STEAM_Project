@@ -1,0 +1,545 @@
+/* ====================================== GŁÓWNY ARKUSZ STYLI STRONY ====================================== */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-size: 18px;
+  font-family: "Catamaran", sans-serif;
+  font-weight: 400;
+  background-color: antiquewhite;
+  line-height: 1.5;
+}
+/*--------------------------------------------- Typografia ---------------------------------------------*/
+h1,
+h2,
+h3 {
+  font-weight: 700;
+  line-height: 1.3;
+}
+h1 {
+  font-size: 100px;
+  font-weight: bold;
+}
+h2 {
+  font-weight: 100;
+  font-size: 50px;
+}
+h3 {
+  font-weight: 100;
+  font-size: 25px;
+}
+
+/*------------------------------------------ Elementy stałe ------------------------------------------*/
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: #ffffff;
+}
+
+/*------------------------------------------ Kontener ------------------------------------------*/
+.container {
+  width: 80%;
+  margin: 0 auto;
+}
+
+/* logo główne */
+.fa-code {
+  font-size: 60px;
+  color: #1aafbc;
+}
+
+/*------------------------------------------ Header ------------------------------------------*/
+.hero {
+  padding-top: 50px;
+  color: #ffffff;
+  background-color: antiquewhite;
+  background-image: url("../images/hero-background.jpg");
+  min-height: 500px;
+  background-attachment: fixed;
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 100vh;
+  background-position: center;
+}
+
+/* nawigacja i logo */
+.hero-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* nawigacja */
+.nav-link {
+  color: white;
+  transition: all 0.1s;
+}
+
+.nav-link:hover {
+  font-weight: 700;
+  border-bottom: solid 3px #1aafbc;
+}
+
+.nav-links {
+  display: flex;
+  justify-content: flex-end;
+  width: 600px;
+  height: 100%;
+  gap: 20px;
+}
+.mobile-menu-icon {
+  display: none;
+}
+/* tekst o mnie */
+
+.hero-bottom {
+  /* wymiary */
+  height: 70vh;
+  width: 30%;
+  min-width: 400px;
+
+  /* flex */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.hero p {
+  font-size: 23px;
+}
+
+/* przycisk poznajmy się */
+.meet-me {
+  margin-top: 20px;
+  height: 50px;
+  width: 50%;
+  min-width: max-content;
+  border: solid 5px #1aafbc;
+  text-align: center;
+  padding: 10px;
+  transition: background-color 0.5s;
+}
+.meet-me:hover {
+  background-color: #1aafbc;
+}
+
+/* ------------------------------------------- Sekcja 1 ------------------------------------------- */
+
+.about {
+  padding: 200px 0;
+}
+
+.about-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.about-right,
+.about-left {
+  width: 500px;
+}
+
+.about-left img {
+  width: 80%;
+}
+.about-left {
+  position: relative;
+  z-index: 0;
+}
+.about-left::before {
+  position: absolute;
+  content: "";
+  top: -30px;
+  left: -60px;
+  border: solid 15px #80634c;
+  background-color: transparent;
+  width: 80%;
+  height: 100%;
+  z-index: -2;
+}
+
+.about-left::after {
+  position: absolute;
+  content: "";
+  top: 0;
+  left: 0;
+  background-color: #1aafbc;
+  width: 80%;
+  height: 100%;
+  top: 30px;
+  left: 60px;
+  z-index: -1;
+}
+
+.about-right {
+  margin-left: 40px;
+}
+
+.about-right h2 {
+  color: #1aafbc;
+  margin-bottom: 30px;
+}
+.about-right p {
+  margin-bottom: 10px;
+}
+
+.first-text::first-letter {
+  color: #1aafbc;
+  font-size: 40px;
+}
+
+/*---------------------------------------------- Sekcja 2 ----------------------------------------------*/
+
+.interests {
+  color: #ffffff;
+}
+
+.interests-wrapper {
+  display: flex;
+  gap: 30px;
+  text-align: center;
+}
+
+.interests-wrapper li {
+  width: 25%;
+}
+
+.interests-wrapper h3 {
+  margin: 20px 0;
+}
+
+.interests-wrapper i {
+  border: solid 2px #1aafbc;
+  padding: 20px;
+  border-radius: 100%;
+}
+
+/*---------------------------------------------- Sekcja 3 ----------------------------------------------*/
+
+.photos {
+  text-align: center;
+}
+
+.photos-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  row-gap: 20px;
+}
+.photos-wrapper figure {
+  width: 30%;
+  transition: 1s;
+  min-width: 260px;
+}
+.photos-wrapper figure:hover {
+  transform: scale(1.05);
+}
+
+.photos-wrapper img {
+  width: 100%;
+  height: 240px;
+  object-fit: cover;
+}
+
+.photos-wrapper figcaption {
+  font-size: 14px;
+}
+
+.photos h2 {
+  color: #80634c;
+  margin-bottom: 20px;
+}
+
+.photos p {
+  padding: 0 150px;
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+
+/*---------------------------------------------- Sekcja 4 ----------------------------------------------*/
+.quote {
+  color: #ffffff;
+  position: relative;
+  z-index: 0;
+
+  overflow: hidden; /* to co wystaje z poza sekcji jest ucinane */
+}
+
+.quote::after {
+  position: absolute;
+  content: "";
+  width: 300px;
+  height: 300px;
+  background-color: #80634c;
+  bottom: -140px;
+  right: -80px;
+  border-radius: 50%;
+  z-index: -1;
+}
+
+.quote-text {
+  font-size: 40px;
+  font-weight: bold;
+  margin-bottom: 30px;
+}
+
+.quote-author {
+  font-size: 14px;
+  text-align: right;
+  text-transform: uppercase;
+}
+
+.fa-quote-left {
+  color: #80634c;
+}
+
+/*---------------------------------------------- Sekcja 5 ----------------------------------------------*/
+
+.contact {
+  text-align: center;
+}
+
+.contact h2 {
+  margin-bottom: 40px;
+}
+
+.contact form {
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  width: 550px;
+}
+
+.contact label {
+  text-align: left;
+  margin-bottom: 5px;
+}
+
+.contact input,
+textarea {
+  margin-bottom: 10px;
+  padding: 8px 15px;
+  border: solid 2px #80634c;
+}
+
+textarea {
+  resize: none;
+}
+
+button {
+  color: #ffffff;
+  background-color: #80634c;
+  font-size: 19px;
+  border: 3px solid #80634c;
+  border-radius: 1px;
+  padding: 5px 15px;
+  cursor: pointer;
+  width: 30%;
+  transition: background-color 0.5s;
+}
+button:hover {
+  color: #80634c;
+  background-color: #ffffff;
+}
+
+.button-wrapper {
+  margin-top: 20px;
+  text-align: center;
+}
+
+/*----------------------------------------------- Footer -----------------------------------------------*/
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+.copyright {
+  margin-bottom: 20px;
+}
+
+.formal {
+  font-size: 14px;
+}
+
+.icons ul {
+  display: flex;
+  gap: 20px;
+}
+
+/*--------------------------------------------- Projects ---------------------------------------------*/
+
+.projects h2, h3{
+  margin-bottom: 30px;
+}
+.projects-form button {
+  margin-top: 10px;
+  width: max-content;
+  height: 50px;
+  text-align: center;
+}
+/* .projects-form form {
+  text-align: center;
+} */
+
+.projects-form input {
+  height: 50px;
+}
+
+table {
+  border-collapse: collapse;
+  margin: 25px 0;
+  font-size: 0.9em;
+  min-width: 400px;
+  width: 100%;
+}
+thead th{
+  text-align: left;
+  background-color: #594535;
+  color: #ffffff;
+}
+
+th, td{
+  padding: 12px 15px;
+}
+tr {
+  border: 5px solid #1aafbc;
+  border-bottom: 1px solid #80634c;
+  background-color: #80634c;
+}
+
+/*----------------------------------------- Stylowanie Sekcji -----------------------------------------*/
+
+.light {
+  background-color: #ffffff;
+}
+
+.brown {
+  background-color: #80634c;
+  color: white;
+}
+
+.uniqe {
+  background-color: #1aafbc;
+  color:#ffffff;
+}
+
+.section {
+  /* padding tylko górny i dolny */
+  padding: 100px 0;
+  width: 100%;
+}
+
+/*---------------------------------------- RWD - Responsywność strony ----------------------------------------*/
+
+/* reguła css @media screen pozwala dostosować stronę na różne ekrany */
+@media screen and (max-width: 1100px) {
+  .photos-wrapper figure {
+    width: 48%;
+  }
+  .nav-links {
+    font-size: 18px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .mobile-menu-icon {
+    display: block;
+    text-align: right;
+  }
+  .nav-links {
+    display: none;
+  }
+  .opened {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+  }
+  h1 {
+    font-size: 80px;
+    margin-top: 100px;
+  }
+  .photos-wrapper figure {
+    width: 90%;
+  }
+  .photos-wrapper {
+    justify-content: center;
+  }
+  .photos p {
+    padding: 0;
+  }
+  .contact form {
+    width: 90%;
+  }
+  .contact h2 {
+    line-height: 1;
+  }
+  .interests-wrapper {
+    display: block;
+  }
+  .interests-wrapper li {
+    width: 100%;
+    margin-bottom: 35px;
+  }
+  .footer {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+  }
+  .about-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+  }
+  .about-left,
+  .about-right {
+    width: 100%;
+  }
+  .hero-bottom {
+    min-width: 100px;
+  }
+  .hero-bottom p {
+    font-size: 18px;
+  }
+  .about-left {
+    text-align: center;
+    margin-bottom: 40px;
+  }
+  .about-left::before {
+    top: -30px;
+    left: -5px;
+  }
+  .about-left::after {
+    top: 20px;
+    left: 80px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  h1 {
+    font-size: 50px;
+  }
+  .hero-bottom p {
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+  .about-left::before {
+    top: -10px;
+    border-width: 5px;
+    left: 0px;
+  }
+  .about-left::after {
+    top: 5px;
+    left: 40px;
+  }
+}
